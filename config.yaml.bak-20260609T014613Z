@@ -1,0 +1,10 @@
+provider: ollama
+model:
+  default: "gemma2"
+  context_length: 65536
+base_url: "http://ollama:11434/v1"
+
+fallback_model:
+  provider: groq
+  model: llama-3.3-70b-versatile
+

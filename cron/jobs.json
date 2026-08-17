@@ -1,0 +1,180 @@
+{
+  "jobs": [
+    {
+      "id": "a94db1823dbc",
+      "name": "Log uso 12:00 BRT",
+      "prompt": "",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": "log_usage.py",
+      "no_agent": true,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 15 * * *",
+        "display": "0 15 * * *"
+      },
+      "schedule_display": "0 15 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 69
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-06-15T01:38:20.890308+00:00",
+      "next_run_at": "2026-08-17T15:00:00+00:00",
+      "last_run_at": "2026-08-16T15:00:47.508027+00:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "5784757517",
+        "chat_name": "Giovani",
+        "thread_id": null
+      },
+      "enabled_toolsets": null,
+      "workdir": null,
+      "profile": null
+    },
+    {
+      "id": "6d71cf006d68",
+      "name": "Log uso 18:00 BRT",
+      "prompt": "",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": "log_usage.py",
+      "no_agent": true,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 21 * * *",
+        "display": "0 21 * * *"
+      },
+      "schedule_display": "0 21 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 63
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-06-15T01:38:26.098115+00:00",
+      "next_run_at": "2026-08-17T21:00:00+00:00",
+      "last_run_at": "2026-08-16T21:00:48.871340+00:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "5784757517",
+        "chat_name": "Giovani",
+        "thread_id": null
+      },
+      "enabled_toolsets": null,
+      "workdir": null,
+      "profile": null
+    },
+    {
+      "id": "a1a6c660ffa7",
+      "name": "gastos-jun-daily",
+      "prompt": "Verifique a planilha \"gastos jun\" no Google Drive (spreadsheetId: 1um9h4c_aXlpxUiiC6WiUcsc2PcvPwD8tPLwCRQJklIM) e envie um resumo dos gastos atuais para o usu\u00e1rio. Extraia os dados completos (Item, Valor, Data), some o total, e entregue em formato organizado por data (pagas primeiro) com total geral ao final.",
+      "skills": [
+        "extract-expenses-to-sheet"
+      ],
+      "skill": "extract-expenses-to-sheet",
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *",
+        "display": "0 9 * * *"
+      },
+      "schedule_display": "0 9 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 0
+      },
+      "enabled": false,
+      "state": "paused",
+      "paused_at": "2026-06-17T01:50:19.872034+00:00",
+      "paused_reason": null,
+      "created_at": "2026-06-17T01:48:32.118420+00:00",
+      "next_run_at": "2026-06-17T09:00:00+00:00",
+      "last_run_at": null,
+      "last_status": null,
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "telegram:5784757517",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "5784757517",
+        "chat_name": "Giovani",
+        "thread_id": null
+      },
+      "enabled_toolsets": [
+        "terminal",
+        "file",
+        "web"
+      ],
+      "workdir": null,
+      "profile": null
+    },
+    {
+      "id": "47c638bae443",
+      "name": "key_inventory",
+      "prompt": "Conduct security audit of API keys. List env vars with API_KEY/TOKEN/SECRET/KEY. Search sessions for api_key, token, credential. Report counts and verify. Export to storage.",
+      "skills": [
+        "credential-audit"
+      ],
+      "skill": "credential-audit",
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 6 * * *",
+        "display": "0 6 * * *"
+      },
+      "schedule_display": "0 6 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 15
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-08-01T06:30:49.516217+00:00",
+      "next_run_at": "2026-08-17T06:00:00+00:00",
+      "last_run_at": "2026-08-16T06:01:43.908392+00:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": null,
+      "enabled_toolsets": null,
+      "workdir": null,
+      "profile": null
+    }
+  ],
+  "updated_at": "2026-08-16T21:00:48.871777+00:00"
+}

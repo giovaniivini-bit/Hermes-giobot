@@ -1,0 +1,10 @@
+model:
+  provider: openrouter
+  default: "deepseek/deepseek-chat"
+  context_length: 64000
+
+fallback_model:
+  provider: openrouter
+  model: "openai/gpt-4o"
+  context_length: 64000
+

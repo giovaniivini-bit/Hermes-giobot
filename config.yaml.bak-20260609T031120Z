@@ -1,0 +1,12 @@
+model:
+  provider: openrouter
+  default: "openrouter/free"
+  context_length: 65536
+
+fallback_model:
+  provider: custom
+  model: "llama3.1:latest"
+  base_url: "http://ollama:11434/v1"
+  context_length: 65536
+  ollama_num_ctx: 65536
+

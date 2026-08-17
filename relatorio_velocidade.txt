@@ -1,0 +1,4 @@
+Relatório de Velocidade:
+
+- Latência atual: 44 ms
+- Modo: Alta Performance

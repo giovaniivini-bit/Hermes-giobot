@@ -1,0 +1,4 @@
+context_lengths:
+  gemma2@http://ollama:11434/v1: 8192
+  llama3.1:latest@http://ollama:11434/v1/: 131072
+  llama3.1@http://ollama:11434/v1/: 131072

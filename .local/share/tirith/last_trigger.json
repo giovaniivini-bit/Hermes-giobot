@@ -1,0 +1,28 @@
+{
+  "rule_ids": [
+    "curl_pipe_shell"
+  ],
+  "severity": "HIGH",
+  "command_redacted": "curl -s \"https://openrouter.ai/api/v1/models\" | python3 -c \"\nimport json, sys\nda...",
+  "findings": [
+    {
+      "rule_id": "curl_pipe_shell",
+      "severity": "HIGH",
+      "title": "Pipe to interpreter: curl | python3",
+      "description": "Command pipes output from 'curl' directly to interpreter 'python3'. Downloaded content will be executed without inspection.\n  Safer: tirith run https://openrouter.ai/api/v1/models  — or: vet https://openrouter.ai/api/v1/models  (https://getvet.sh)",
+      "evidence": [
+        {
+          "type": "command_pattern",
+          "pattern": "pipe to interpreter",
+          "matched": "curl -s \"https://openrouter.ai/api/v1/models\" | python3 -c \"\nimport json, sys\ndata = json.load(sys.stdin)\nmodels = data.get('data', [])\nresults = []\nfor m in models:\n    p = m.get('pricing', {})\n    p_in = float(p.get('prompt', 0)) * 1_000_000\n    p_out = float(p.get('completion', 0)) * 1_000_000\n    if p_in > 0 and p_in < 0.084:  # mais barato que nosso modelo no input\n        ctx = m.get('context_length', 0)\n        name = m.get('name', m.get('id', ''))\n        mid = m.get('id', '')\n        results.append({\n            'id': mid,\n            'name': name,\n            'in': p_in,\n            'out': p_out,\n            'ctx': ctx\n        })\nresults.sort(key=[REDACTED] x: x['in'])\nprint(f'Modelos com input mais barato que \\$0.084/M: {len(results)}')\nfor r in results:\n    print(f\\\"{r['id'][:55]:55} | in: \\${r['in']:.4f}/M | out: \\${r['out']:.4f}/M | ctx: {r['ctx']}\\\")\n\" 2>&1"
+        },
+        {
+          "type": "url",
+          "raw": "https://openrouter.ai/api/v1/models"
+        }
+      ],
+      "mitre_id": "T1059.004"
+    }
+  ],
+  "timestamp": "2026-08-07T19:09:49.424955652+00:00"
+}

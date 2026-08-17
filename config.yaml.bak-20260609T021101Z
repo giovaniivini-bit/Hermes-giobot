@@ -1,0 +1,15 @@
+model:
+  provider: custom
+  default: "llama-3.3-70b-versatile"
+  base_url: "https://api.groq.com/openai/v1"
+  api_type: "openai"
+  context_length: 65536
+  max_tokens: 8192
+
+fallback_model:
+  provider: custom
+  model: llama3.1
+  base_url: "http://ollama:11434/v1"
+  context_length: 65536
+  ollama_num_ctx: 65536
+

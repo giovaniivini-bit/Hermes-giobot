@@ -1,0 +1,113 @@
+---
+name: huggingface-hub
+description: "HuggingFace hf CLI: search/download/upload models, datasets."
+version: 1.0.0
+author: Hugging Face
+license: MIT
+tags: [huggingface, hf, models, datasets, hub, mlops]
+platforms: [linux, macos, windows]
+---
+
+# Hugging Face CLI (`hf`) Reference Guide
+
+The `hf` command is the modern command-line interface for interacting with the Hugging Face Hub, providing tools to manage repositories, models, datasets, and Spaces.
+
+> **IMPORTANT:** The `hf` command replaces the now deprecated `huggingface-cli` command.
+
+## Quick Start
+*   **Installation:** `curl -LsSf https://hf.co/cli/install.sh | bash -s`
+*   **Help:** Use `hf --help` to view all available functions and real-world examples.
+*   **Authentication:** Recommended via `HF_TOKEN` environment variable or the `--token` flag.
+
+---
+
+## Core Commands
+
+### General Operations
+*   `hf download REPO_ID`: Download files from the Hub.
+*   `hf upload REPO_ID`: Upload files/folders (recommended for single-commit).
+*   `hf upload-large-folder REPO_ID LOCAL_PATH`: Recommended for resumable uploads of large directories.
+*   `hf sync`: Sync files between a local directory and a bucket.
+*   `hf env` / `hf version`: View environment and version details.
+
+### Authentication (`hf auth`)
+*   `login` / `logout`: Manage sessions using tokens from [huggingface.co/settings/tokens](https://huggingface.co/settings/tokens).
+*   `list` / `switch`: Manage and toggle between multiple stored access tokens.
+*   `whoami`: Identify the currently logged-in account.
+
+### Repository Management (`hf repos`)
+*   `create` / `delete`: Create or permanently remove repositories.
+*   `duplicate`: Clone a model, dataset, or Space to a new ID.
+*   `move`: Transfer a repository between namespaces.
+*   `branch` / `tag`: Manage Git-like references.
+*   `delete-files`: Remove specific files using patterns.
+
+---
+
+## Specialized Hub Interactions
+
+### Datasets & Models
+*   **Datasets:** `hf datasets list`, `info`, and `parquet` (list parquet URLs).
+*   **SQL Queries:** `hf datasets sql SQL` — Execute raw SQL via DuckDB against dataset parquet URLs.
+*   **Models:** `hf models list` and `info`.
+*   **Papers:** `hf papers list` — View daily papers.
+
+### Discussions & Pull Requests (`hf discussions`)
+*   Manage the lifecycle of Hub contributions: `list`, `create`, `info`, `comment`, `close`, `reopen`, and `rename`.
+*   `diff`: View changes in a PR.
+*   `merge`: Finalize pull requests.
+
+### Infrastructure & Compute
+*   **Endpoints:** Deploy and manage Inference Endpoints (`deploy`, `pause`, `resume`, `scale-to-zero`, `catalog`).
+*   **Jobs:** Run compute tasks on HF infrastructure. Includes `hf jobs uv` for running Python scripts with inline dependencies and `stats` for resource monitoring.
+*   **Spaces:** Manage interactive apps. Includes `dev-mode` and `hot-reload` for Python files without full restarts.
+
+### Storage & Automation
+*   **Buckets:** Full S3-like bucket management (`create`, `cp`, `mv`, `rm`, `sync`).
+*   **Cache:** Manage local storage with `list`, `prune` (remove detached revisions), and `verify` (checksum checks).
+*   **Webhooks:** Automate workflows by managing Hub webhooks (`create`, `watch`, `enable`/`disable`).
+*   **Collections:** Organize Hub items into collections (`add-item`, `update`, `list`).
+
+---
+
+## Advanced Usage & Tips
+
+### Global Flags
+*   `--format json`: Produces machine-readable output for automation.
+*   `-q` / `--quiet`: Limits output to IDs only.
+
+### Extensions & Skills
+### Skills
+Manage AI assistant skills with `hf skills add`.
+
+---
+
+## Model Access & Pricing Check
+
+The former `model-access-pricing-check` skill is now a reference under this
+umbrella. Use it when you need to check if a model ID exists on OpenRouter
+(or a provider) and determine its pricing.
+
+See `references/model-pricing-check.md` for the full workflow.
+
+### Quick Start
+
+1. **OpenRouter lookup:** Navigate to `https://openrouter.ai/models`, search
+   for the model ID (e.g. `z-ai/glm-5.2`), extract the pricing line (`$input /
+   $output per 1M`).
+2. **Provider check (optional):** Visit the provider's website (`/pricing`
+   page) to check for free tiers or subscriptions.
+3. **Determine cost:** If both input and output show `$0.00`, treat as free.
+   Otherwise note the USD per 1M tokens.
+
+### Output format
+
+- `Model <ID> is available on OpenRouter: $<input>/1M in, $<output>/1M out.`
+- If not found: `Model <ID> not found on OpenRouter.`
+- Add provider info: `Provider <site> offers <free/paid> access.`
+
+### Pitfalls
+
+- OpenRouter search may show similar names; verify exact model ID.
+- Some providers hide pricing behind login; look for "Sign up for free".
+- Prices change; treat as approximate.

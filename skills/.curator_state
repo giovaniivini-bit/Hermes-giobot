@@ -1,0 +1,9 @@
+{
+  "last_report_path": "/opt/data/logs/curator/20260811-043517",
+  "last_run_at": "2026-08-11T04:35:17.135300+00:00",
+  "last_run_duration_seconds": 82.641071,
+  "last_run_summary": "auto: no changes; llm: Now I have a thorough picture of all 28 candidate skills and their actual content. Here's my assessment:\n\n## Assessment Summary\n\nAfter reading SKILL.md bodies and linked files for every accessible skill, **none of the 28 agent-created skill…",
+  "last_run_summary_shown_at": null,
+  "paused": false,
+  "run_count": 9
+}
