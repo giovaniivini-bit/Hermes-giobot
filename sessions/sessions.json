@@ -1,9 +1,9 @@
 {
   "agent:main:telegram:dm:5784757517": {
     "session_key": "agent:main:telegram:dm:5784757517",
-    "session_id": "20260810_144622_51a16648",
-    "created_at": "2026-08-10T14:46:22.480283",
-    "updated_at": "2026-08-10T15:00:16.527195",
+    "session_id": "20260817_013057_106408d8",
+    "created_at": "2026-08-17T01:30:57.411777",
+    "updated_at": "2026-08-17T01:59:54.386310",
     "display_name": "Giovani",
     "platform": "telegram",
     "chat_type": "dm",
@@ -12,10 +12,10 @@
     "cache_read_tokens": 0,
     "cache_write_tokens": 0,
     "total_tokens": 0,
-    "last_prompt_tokens": 68955,
+    "last_prompt_tokens": 73223,
     "estimated_cost_usd": 0.0,
     "cost_status": "unknown",
-    "expiry_finalized": true,
+    "expiry_finalized": false,
     "suspended": false,
     "resume_pending": false,
     "resume_reason": null,
@@ -33,7 +33,7 @@
       "user_name": "Giovani",
       "thread_id": null,
       "chat_topic": null,
-      "message_id": "1035"
+      "message_id": "1083"
     }
   }
 }

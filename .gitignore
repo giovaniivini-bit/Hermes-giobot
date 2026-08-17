@@ -38,3 +38,5 @@ audit_report_*
 credentials.json
 skills/productivity/google-workspace/credentials.json
 skills/security/
+.ssh/
+home/.gitconfig

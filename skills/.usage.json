@@ -173,13 +173,13 @@
     "created_at": "2026-06-15T02:44:44.283141+00:00",
     "created_by": "agent",
     "last_patched_at": "2026-08-01T06:31:32.819858+00:00",
-    "last_used_at": "2026-08-11T04:36:09.750921+00:00",
-    "last_viewed_at": "2026-08-11T04:36:09.737758+00:00",
+    "last_used_at": "2026-08-17T01:53:04.491172+00:00",
+    "last_viewed_at": "2026-08-17T01:53:04.483531+00:00",
     "patch_count": 4,
     "pinned": false,
     "state": "active",
-    "use_count": 11,
-    "view_count": 11
+    "use_count": 12,
+    "view_count": 12
   },
   "design-md": {
     "archived_at": null,
@@ -276,10 +276,10 @@
     "archived_at": null,
     "created_at": "2026-08-17T01:31:03.426617+00:00",
     "created_by": null,
-    "last_patched_at": "2026-08-17T01:47:15.410611+00:00",
+    "last_patched_at": "2026-08-17T01:53:16.880293+00:00",
     "last_used_at": "2026-08-17T01:47:11.729780+00:00",
     "last_viewed_at": "2026-08-17T01:47:11.724853+00:00",
-    "patch_count": 1,
+    "patch_count": 3,
     "pinned": false,
     "state": "active",
     "use_count": 2,
@@ -368,13 +368,13 @@
     "created_at": "2026-08-17T01:46:53.744061+00:00",
     "created_by": "agent",
     "last_patched_at": "2026-08-17T01:47:06.016499+00:00",
-    "last_used_at": null,
-    "last_viewed_at": null,
+    "last_used_at": "2026-08-17T01:56:39.043253+00:00",
+    "last_viewed_at": "2026-08-17T01:56:39.039042+00:00",
     "patch_count": 1,
     "pinned": false,
     "state": "active",
-    "use_count": 0,
-    "view_count": 0
+    "use_count": 2,
+    "view_count": 2
   },
   "himalaya": {
     "archived_at": null,

@@ -18,6 +18,13 @@ This skill covers various GitHub operations via the CLI and API.
 
 See the `github-auth` skill for setting up GitHub authentication (HTTPS tokens, SSH keys, gh CLI login).
 
+## Multi-Instance Brain Sync
+
+Pattern: multiple Hermes Agent instances sync their brains (skills, memories, config, SOUL, plugins, cron, scripts) to a single shared GitHub repo. Pitfalls:
+- SSH host key verification fails on new machines — must add server's SSH public key to `~/.ssh/known_hosts` via initial `ssh git@github.com` connection, OR configure a PAT-based HTTPS remote.
+- Script paths may differ across deployments (`sync_brain.sh` may hardcode an old base directory); always verify `cd <base>` works before running.
+- Ensure `.gitignore` excludes sensitive files: `.env*`, `auth.json`, `google_token.json`, state dbs, caches.
+
 ## Issues
 
 See the `github-issues` skill for creating, triaging, labeling, and assigning GitHub issues.
