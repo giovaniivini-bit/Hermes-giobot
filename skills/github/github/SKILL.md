@@ -38,3 +38,8 @@ See the `github-repo-management` skill for cloning, creating, forking repos; man
 
 - GitHub CLI: https://cli.github.com/
 - GitHub REST API: https://docs.github.com/en/rest
+
+## Pitfalls
+
+### Verify sub-skill refs before claiming completeness
+This SKILL.md references 5 sub-skills (`github-auth`, `github-issues`, `github-pr-workflow`, `github-code-review`, `github-repo-management`). When editing or loading this skill, ALWAYS verify each referenced sub-skill loads successfully with `skill_view(name=<ref>)`. If any return "not found", report the gap to the user — do not assume they exist on disk. A common failure mode: SKILL.md is updated to reference new sub-skills but the actual files are never created.
